@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/productsFragment">
+
+    <fragment
+        android:id="@+id/productsFragment"
+        android:name="com.feyzaeda.productapp.fragments.ProductsFragment"
+        android:label="fragment_products"
+        tools:layout="@layout/fragment_products" >
+        <action
+            android:id="@+id/actionProductsFragmentToProductsDetailFragment"
+            app:destination="@id/productDetailFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"/>
+        <action
+            android:id="@+id/actionProductsFragmentToFavoriteProductsFragment"
+            app:destination="@id/favoriteProductsFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"/>
+        <action
+            android:id="@+id/actionProductsFragmentToOrderBasketFragment"
+            app:destination="@id/orderBasketFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"/>
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.feyzaeda.productapp.fragments.ProductDetailFragment"
+        android:label="fragment_product_detail"
+        tools:layout="@layout/fragment_products_detail" >
+        <argument
+            android:name="productId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"/>
+        <action
+            android:id="@+id/action_productDetailFragment_to_orderBasketFragment"
+            app:destination="@id/orderBasketFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"/>
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteProductsFragment"
+        android:name="com.feyzaeda.productapp.fragments.FavoriteProductsFragment"
+        android:label="fragment_favorite_product"
+        tools:layout="@layout/fragment_favorite_products" >
+        <action
+            android:id="@+id/actionFavoriteProductsFragmentToProductDetailFragment"
+            app:destination="@id/productDetailFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"/>
+        <action
+            android:id="@+id/actionFavoriteProductsFragmentToProductFragment"
+            app:destination="@id/productsFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"/>
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.feyzaeda.productapp.fragments.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" >
+        <argument
+            android:name="productName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderBasketFragment"
+        android:name="com.feyzaeda.productapp.fragments.OrderBasketFragment"
+        android:label="OrderBasketFragment" >
+        <action
+            android:id="@+id/actionOrderBasketFragmentToProductFragment"
+            app:destination="@id/productsFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"/>
+        <action
+            android:id="@+id/actionOrderBasketFragmentToProductDetailFragment"
+            app:destination="@id/productDetailFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"/>
+        <action
+            android:id="@+id/action_orderBasketFragment_to_checkOutFragment"
+            app:destination="@id/checkOutFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"/>
+    </fragment>
+    <fragment
+        android:id="@+id/checkOutFragment"
+        android:name="com.feyzaeda.productapp.fragments.CheckOutFragment"
+        android:label="fragment_check_out"
+        tools:layout="@layout/fragment_check_out" >
+        <action
+            android:id="@+id/action_checkOutFragment_to_productsFragment"
+            app:destination="@id/productsFragment" />
+    </fragment>
+</navigation>

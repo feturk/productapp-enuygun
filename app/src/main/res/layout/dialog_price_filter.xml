@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etMinPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/min_price"
+        android:inputType="number"
+        android:autofillHints="minPrice" />
+
+    <EditText
+        android:id="@+id/etMaxPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/max_price"
+        android:inputType="number"
+        android:autofillHints="maxPrice" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnApply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/main_theme_color"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:text="@string/apply"
+            android:textColor="@color/white"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:backgroundTint="@color/main_theme_color"
+            android:text="@string/clear"
+            android:textColor="@color/white"
+            style="?android:attr/buttonBarButtonStyle" />
+    </LinearLayout>
+
+
+</LinearLayout>
